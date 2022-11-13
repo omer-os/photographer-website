@@ -57,9 +57,20 @@
           transform: translateX(-100%);
         }
       }
+      .fade-in {
+        animation: fadein 0.9s ease-in-out;
+      }
+      @keyframes fadein {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 100;
+        }
+      }
     </style>
   </head>
-  <body>
+  <body class="fade-in">
     <header class="fixed z-40 top-0 left-0 right-0">
       <nav class="flex z-40 py-4 px-7 justify-between items-center">
         <a href="index.html#hero" class="font-bold z-20">jhon Gallery</a>
@@ -109,9 +120,6 @@
       id="hero"
     >
       <div class="sm:max-w-[30em] px-3 flex flex-col items-center">
-        <div class="text-4xl text-center font-bold">
-          Hello, My Name Is jhon And Im A Passionate Photographer
-        </div>
         <div class="flex text-sm gap-4 mt-8">
           <a
             href="gallery.html"
@@ -129,38 +137,7 @@
       </div>
     </section>
 
-    <section
-      class="w-full py-[2em] px-10 relative sm:top-0 top-[10em] transition-all"
-      id="about"
-    >
-      <div class="max-w-[45em] relative m-auto">
-        <div class="flex-row flex gap-5 items-center">
-          <div class="flex gap-2 z-20 flex-col">
-            <div class="text-3xl font-bold">About Me</div>
-            <div class="text-lg mb-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-              perferendis dolores delectus doloremque, repellendus nisi
-              provident aliquid tempora magni quas in quaerat impedit tenetur at
-              quisquam quibusdam maiores odio reiciendis.
-            </div>
-
-            <a
-              href="#contact"
-              class="active:scale-95 transition-all hover:scale-105 text-white w-max bg-black py-2 px-3"
-            >
-              Contact Me
-            </a>
-          </div>
-          <img
-            src="https://images.unsplash.com/photo-1668248949793-12718a4dd485?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
-            class="sm:w-[20em] bottom-3/6 sm:relative absolute z-10 object-cover h-[25em] -left-20 sm:left-0 transition-all"
-            alt=""
-          />
-        </div>
-      </div>
-    </section>
-
-    <section class="relative transition-all sm:top-[2em] top-[16em]" id="works">
+    <section class="relative transition-all top-10" id="works">
       <div class="flex flex-col items-center">
         <div class="font-bold text-2xl text-center">My Works</div>
         <div
@@ -185,7 +162,7 @@
       </div>
     </section>
 
-    <section class="top-[20em] sm:top-20 relative overflow-x-hidden">
+    <section class="top-[5em] sm:top-20 relative overflow-x-hidden">
       <div class="scroll-element flex">
         <img
           class="min-w-[20em] h-[10em] object-cover"
@@ -223,7 +200,33 @@
       </div>
     </section>
 
-    <section class="relative top-[20em] sm:top-[5em] p-8" id="contact">
+    <section
+      class="w-full py-[2em] px-10 relative sm:top-[8em] top-[6em] transition-all"
+      id="about"
+    >
+      <div class="max-w-[45em] relative m-auto">
+        <div class="flex-row flex gap-5 items-center">
+          <div class="flex gap-2 z-20 flex-col">
+            <div class="text-3xl font-bold">About Me</div>
+            <div class="text-lg mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
+              perferendis dolores delectus doloremque, repellendus nisi
+              provident aliquid tempora magni quas in quaerat impedit tenetur at
+              quisquam quibusdam maiores odio reiciendis.
+            </div>
+
+            <a
+              href="#contact"
+              class="active:scale-95 transition-all hover:scale-105 text-white w-max bg-black py-2 px-3"
+            >
+              Contact Me
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative top-[10em] sm:top-[5em] p-8" id="contact">
       <div class="flex flex-col items-center">
         <div class="text-xl font-bold">Contact Me From</div>
 
@@ -362,7 +365,7 @@
       </div>
     </section>
 
-    <footer class="transition-all relative top-[20em] sm:top-20">
+    <footer class="transition-all relative top-[10em] sm:top-20">
       <div class="w-full mx-auto">
         <footer class="p-4 bg-white sm:p-6 dark:bg-gray-800">
           <div class="md:flex md:justify-between">

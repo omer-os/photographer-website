@@ -57,9 +57,20 @@
           transform: translateX(-100%);
         }
       }
+      .fade-in {
+        animation: fadein 0.9s ease-in-out;
+      }
+      @keyframes fadein {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 100;
+        }
+      }
     </style>
   </head>
-  <body>
+  <body class="fade-in">
     <header class="fixed z-40 top-0 left-0 right-0">
       <nav class="flex z-40 py-4 px-7 justify-between items-center">
         <a href="index.html#hero" class="font-bold z-20">Sadiq Gallery</a>
