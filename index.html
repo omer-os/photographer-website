@@ -7,6 +7,9 @@
     <title>jhon Gallery</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+      .scroll-snap-none::-webkit-scrollbar {
+        display: none;
+      }
       * {
         scroll-behavior: smooth;
       }
@@ -162,42 +165,67 @@
       </div>
     </section>
 
-    <section class="top-[5em] sm:top-20 relative overflow-x-hidden">
-      <div class="scroll-element flex">
-        <img
-          class="min-w-[20em] h-[10em] object-cover"
-          src="https://images.unsplash.com/photo-1641892025794-2de340f5c738?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fG1vdW50YW5zJTIwYW5kJTIwbmF0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-          alt=""
-        /><img
-          class="min-w-[20em] h-[10em] object-cover"
-          src="https://images.unsplash.com/photo-1658755650561-519d543472e8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fG1vdW50YW5zJTIwYW5kJTIwbmF0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-          alt=""
-        /><img
-          class="min-w-[20em] h-[10em] object-cover"
-          src="https://images.unsplash.com/photo-1532958299130-8fb4c998b871?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fG1vdW50YW5zJTIwYW5kJTIwbmF0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-          alt=""
-        /><img
-          class="min-w-[20em] h-[10em] object-cover"
-          src="https://images.unsplash.com/photo-1592762172664-44b19eeb54ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fG1vdW50YW5zJTIwYW5kJTIwbmF0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-          alt=""
-        /><img
-          class="min-w-[20em] h-[10em] object-cover"
-          src="https://images.unsplash.com/photo-1658755679859-ada41f867f8d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fG1vdW50YW5zJTIwYW5kJTIwbmF0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-          alt=""
-        /><img
-          class="min-w-[20em] h-[10em] object-cover"
-          src="https://images.unsplash.com/photo-1641892025906-345ac7f6ac13?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vdW50YW5zJTIwYW5kJTIwbmF0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-          alt=""
-        /><img
-          class="min-w-[20em] h-[10em] object-cover"
-          src="https://images.unsplash.com/photo-1658755645011-d85a240e59d5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8bW91bnRhbnMlMjBhbmQlMjBuYXR1cmV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
-          alt=""
-        /><img
-          class="min-w-[20em] h-[10em] object-cover"
-          src="https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bW91bnRhbnMlMjBhbmQlMjBuYXR1cmV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
-          alt=""
-        />
-      </div>
+    <section
+      class="scroll-snap-none top-[5em] sm:top-20 relative snap-x overflow-x-scroll flex"
+    >
+      <img
+        class="min-w-[20em] snap-start snap-mandatory h-[14em] object-cover"
+        src="https://images.unsplash.com/photo-1641892025794-2de340f5c738?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fG1vdW50YW5zJTIwYW5kJTIwbmF0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+        alt=""
+      /><img
+        class="min-w-[20em] snap-start snap-mandatory h-[14em] object-cover"
+        src="https://images.unsplash.com/photo-1658755650561-519d543472e8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fG1vdW50YW5zJTIwYW5kJTIwbmF0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+        alt=""
+      /><img
+        class="min-w-[20em] snap-start snap-mandatory h-[14em] object-cover"
+        src="https://images.unsplash.com/photo-1532958299130-8fb4c998b871?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fG1vdW50YW5zJTIwYW5kJTIwbmF0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+        alt=""
+      /><img
+        class="min-w-[20em] snap-start snap-mandatory h-[14em] object-cover"
+        src="https://images.unsplash.com/photo-1592762172664-44b19eeb54ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fG1vdW50YW5zJTIwYW5kJTIwbmF0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+        alt=""
+      /><img
+        class="min-w-[20em] snap-start snap-mandatory h-[14em] object-cover"
+        src="https://images.unsplash.com/photo-1658755679859-ada41f867f8d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fG1vdW50YW5zJTIwYW5kJTIwbmF0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+        alt=""
+      /><img
+        class="min-w-[20em] snap-start snap-mandatory h-[14em] object-cover"
+        src="https://images.unsplash.com/photo-1641892025906-345ac7f6ac13?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vdW50YW5zJTIwYW5kJTIwbmF0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+        alt=""
+      /><img
+        class="min-w-[20em] snap-start snap-mandatory h-[14em] object-cover"
+        src="https://images.unsplash.com/photo-1658755645011-d85a240e59d5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8bW91bnRhbnMlMjBhbmQlMjBuYXR1cmV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+        alt=""
+      /><img
+        class="min-w-[20em] snap-start snap-mandatory h-[14em] object-cover"
+        src="https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bW91bnRhbnMlMjBhbmQlMjBuYXR1cmV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+        alt=""
+      />
+    </section>
+
+    <section
+      class="px-5 relative top-20 py-10 flex flex-col items-center gap-10"
+    >
+      <div class="text-2xl text-center capitalize font-bold">my videos</div>
+      <iframe
+        height="400"
+        class="max-w-[35em] w-full"
+        src="https://www.youtube.com/embed/OThBlMGfcns"
+        title="Cem Adrian - Gül Güzeli (Live)"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+
+      <iframe
+        height="400"
+        class="max-w-[35em] w-full"
+        src="https://www.youtube.com/embed/OThBlMGfcns"
+        title="Cem Adrian - Gül Güzeli (Live)"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
     </section>
 
     <section
@@ -365,7 +393,9 @@
       </div>
     </section>
 
-    <footer class="transition-all relative top-[10em] sm:top-20">
+    <div class="py-10 px-10"></div>
+
+    <!-- <footer class="transition-all relative top-[10em] sm:top-20">
       <div class="w-full mx-auto">
         <footer class="p-4 bg-white sm:p-6 dark:bg-gray-800">
           <div class="md:flex md:justify-between">
@@ -526,7 +556,15 @@
           </div>
         </footer>
       </div>
-    </footer>
+    </footer> -->
+
+    <div class="text-center text-xl my-10">
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
+        >© 2022
+        <a href="https://github.com/omer-os" class="hover:underline">Morris</a>.
+        All Rights Reserved.
+      </span>
+    </div>
 
     <script>
       const burgerBtn = document.querySelector(".burger-button");
