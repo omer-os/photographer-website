@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.burger-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  z-index: 999;
+  cursor: pointer;
+  position: relative;
+}
+.line {
+  position: relative;
+  width: 2em;
+  height: 0.2em;
+  background-color: white;
+  top: 0;
+  left: 0;
+  opacity: 100;
+  transition: all 300ms ease;
+}
+.line-0.active {
+  transform: rotate(45deg);
+  top: 0.6em;
+}
+.line-1.active {
+  left: -1em;
+  opacity: 0;
+}
+.line-2.active {
+  transform: rotate(-45deg);
+  top: -0.6em;
+}
