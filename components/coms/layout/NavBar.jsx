@@ -45,10 +45,10 @@ export default function NavBar() {
             name: "home",
             link: "/",
           },
-          {
-            name: "about",
-            link: "/about",
-          },
+          // {
+          //   name: "about",
+          //   link: "/about",
+          // },
           // {
           //   name: "services",
           //   link: "/services",
@@ -61,12 +61,18 @@ export default function NavBar() {
           <Link
             className={`${
               router.pathname === i.link && "!font-bold scale-[1.09]"
-            } scale-1 transition-all font-normal`}
+            } scale-1 transition-all font-normal relative`}
             key={index}
             onClick={() => setOpenSideBar(false)}
             href={i.link}
           >
             {i.name}
+            {router.pathname === i.link && (
+              <motion.div
+                layoutId="link-border"
+                className="absolute -bottom-[.5] w-full h-[.08em] bg-green-500"
+              />
+            )}
           </Link>
         ))}
 
@@ -87,7 +93,7 @@ export default function NavBar() {
             <img src="/icons/instagram.svg" alt="" />
           </div>
           <div className="text-center capitalize text-zinc-600 font-normal">
-              Morris ©2020{" "}
+            Morris ©2020{" "}
           </div>
         </div>
       </div>

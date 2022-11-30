@@ -7,7 +7,7 @@ export default function HomeGrid({ wedding, portrait, baby, promotion }) {
       animate={{
         opacity: [0, 1],
       }}
-      className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 md:h-[80vh] h-[100em] md:gap-0 gap-4"
+      className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 md:h-[80vh] h-[100em] sm:mt-0 mt-5 md:gap-0 gap-1"
     >
       {[
         {

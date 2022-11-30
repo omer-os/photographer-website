@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 export default function ImageZoomed() {
   const router = useRouter();
   const { url } = router.query;
+
   return (
     <motion.div
       whileInView={{

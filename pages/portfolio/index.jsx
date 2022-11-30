@@ -9,12 +9,13 @@ export default function Index({ data }) {
   const [Category, setCategory] = useState("wedding");
   const router = useRouter();
   const { category } = router.query;
-
   useEffect(() => {
     if (category) {
       setCategory(category);
     }
   }, []);
+
+
 
   return (
     <div className="mb-20 mt-24">
@@ -62,6 +63,7 @@ export async function getStaticProps() {
       {
         gallerieImages {
           category
+          videoLink
           images {
             url
             id
