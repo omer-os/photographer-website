@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function GalleryImage({ i }) {
-  const [Open, setOpen] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
     <motion.div
       whileInView={{
@@ -18,6 +19,7 @@ export default function GalleryImage({ i }) {
       className={`relative`}
       layout
     >
+      {!isLoaded && <div className="animate-pulse bg-zinc-200"></div>}
       <Link href={`/portfolio/image?url=${i.url}`}>
         <motion.div layoutId={i.url}>
           <Image
@@ -25,6 +27,7 @@ export default function GalleryImage({ i }) {
             fill
             alt="project image"
             className="object-cover"
+            onLoad={() => setIsLoaded(true)}
           />
         </motion.div>
       </Link>

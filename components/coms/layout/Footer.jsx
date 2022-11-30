@@ -24,14 +24,7 @@ export default function Footer() {
             Home
           </Link>
         </li>
-        <li>
-          <Link
-            href="/about"
-            className="sm:mr-4 sm:text-sm text-gray-500 hover:underline md:mr-6 dark:text-gray-400"
-          >
-            About
-          </Link>
-        </li>
+
         <li>
           <Link
             href="/portfolio"
