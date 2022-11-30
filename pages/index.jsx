@@ -17,11 +17,9 @@ export default function Index({ data }) {
         animate={{
           opacity: [0, 1],
         }}
-        
       >
-        {/* <Hero heroImage={data.homePageData[0].heroImage.url} /> */}
         <Hero
-          HeroImage={"https://mosa-khudur.github.io/olla/img/sadiq123.jpg"}
+          HeroImage={data.homePageData[0].heroImage.url}
         />
 
         <HomeGrid

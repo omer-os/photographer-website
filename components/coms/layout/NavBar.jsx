@@ -45,10 +45,10 @@ export default function NavBar() {
             name: "home",
             link: "/",
           },
-          // {
-          //   name: "about",
-          //   link: "/about",
-          // },
+          {
+            name: "about",
+            link: "/about",
+          },
           // {
           //   name: "services",
           //   link: "/services",
@@ -74,7 +74,7 @@ export default function NavBar() {
           <Link
             onClick={() => setOpenSideBar(false)}
             href="/contact"
-            className="bg-stone-900 text-white active:scale-95 transition-all py-2 px-3 z-20 rounded"
+            className="bg-green-500 text-white active:scale-95 transition-all py-2 px-3 z-20 rounded"
           >
             contact with me
           </Link>
@@ -87,7 +87,7 @@ export default function NavBar() {
             <img src="/icons/instagram.svg" alt="" />
           </div>
           <div className="text-center capitalize text-zinc-600 font-normal">
-            lamasat al fan ©2020{" "}
+              Morris ©2020{" "}
           </div>
         </div>
       </div>
@@ -95,7 +95,7 @@ export default function NavBar() {
       <div className="sm:flex hidden gap-3">
         <Link
           href="/contact"
-          className="bg-stone-800 text-white  py-2 px-3 rounded"
+          className="bg-gradient-to-br from-green-700 active:scale-95 transition-all to-green-600 text-white  py-2 px-3 rounded"
         >
           contact with me
         </Link>
