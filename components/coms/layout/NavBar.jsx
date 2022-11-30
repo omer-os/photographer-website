@@ -35,7 +35,9 @@ export default function NavBar() {
       </Link>
 
       <div
-        className={`flex flex-col sm:flex-row gap-5 sm:relative fixed sm:w-max sm:h-max w-full h-full z-40 top-0 items-center transition-all duration-300 justify-center ${OpenSideBar&&"!left-0"} left-full font-bolScrollTop && "!left-0 bg-stone-800 sm:bg-transparent visible !opacity-100 capitalize"
+        className={`flex flex-col sm:flex-row gap-5 sm:relative fixed sm:w-max sm:h-max w-full h-full z-40 top-0 items-center transition-all duration-300 justify-center ${
+          OpenSideBar && "!left-0"
+        } left-full font-bolScrollTop && "!left-0 bg-stone-800 sm:bg-transparent visible !opacity-100 capitalize"
         }  opacity-0 sm:opacity-100 sm:left-0`}
       >
         {[
@@ -43,14 +45,14 @@ export default function NavBar() {
             name: "home",
             link: "/",
           },
-          {
-            name: "about",
-            link: "/about",
-          },
-          {
-            name: "services",
-            link: "/services",
-          },
+          // {
+          //   name: "about",
+          //   link: "/about",
+          // },
+          // {
+          //   name: "services",
+          //   link: "/services",
+          // },
           {
             name: "portfolio",
             link: "/portfolio",

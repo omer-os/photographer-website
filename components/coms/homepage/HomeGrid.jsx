@@ -3,27 +3,32 @@ import Link from "next/link";
 
 export default function HomeGrid({ wedding, portrait, baby, promotion }) {
   return (
-    <section className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 md:h-[80vh] h-[100em] md:gap-0 gap-4">
+    <motion.section
+      animate={{
+        opacity: [0, 1],
+      }}
+      className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 md:h-[80vh] h-[100em] md:gap-0 gap-4"
+    >
       {[
         {
           name: "Wedding section",
           image: wedding,
-          link: "/portfolio/wedding",
+          link: "/portfolio?category=wedding",
         },
         {
-          name: "Wedding section",
+          name: "portrait section",
           image: portrait,
-          link: "/portfolio/portrait",
+          link: "/portfolio?category=portrait",
         },
         {
-          name: "Wedding section",
+          name: "baby section",
           image: baby,
-          link: "/portfolio/baby",
+          link: "/portfolio?category=baby",
         },
         {
-          name: "Wedding section",
+          name: "promotion section",
           image: promotion,
-          link: "/portfolio/promotion",
+          link: "/portfolio?category=promotion",
         },
       ].map((i, index) => (
         <Link className="h-full" key={index} href={i.link}>
@@ -61,6 +66,6 @@ export default function HomeGrid({ wedding, portrait, baby, promotion }) {
           </motion.div>
         </Link>
       ))}
-    </section>
+    </motion.section>
   );
 }

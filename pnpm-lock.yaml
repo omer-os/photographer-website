@@ -10,6 +10,8 @@ specifiers:
   postcss: ^8.4.19
   react: 18.2.0
   react-dom: 18.2.0
+  react-grid-gallery: ^1.0.0
+  react-photo-gallery: ^8.0.0
   tailwindcss: ^3.2.4
 
 dependencies:
@@ -22,6 +24,8 @@ dependencies:
   postcss: 8.4.19
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-grid-gallery: 1.0.0_react@18.2.0
+  react-photo-gallery: 8.0.0_biqbaboplfbrettd7655fr4n2y
   tailwindcss: 3.2.4_postcss@8.4.19
 
 packages:
@@ -802,6 +806,14 @@ packages:
       source-map-js: 1.0.2
     dev: false
 
+  /prop-types/15.7.2:
+    resolution: {integrity: sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==}
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      react-is: 16.13.1
+    dev: false
+
   /prop-types/15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
     dependencies:
@@ -829,8 +841,28 @@ packages:
       scheduler: 0.23.0
     dev: false
 
+  /react-grid-gallery/1.0.0_react@18.2.0:
+    resolution: {integrity: sha512-S1gr6WXBlPFVrE0x2BHuu7jhyaB61mabcMQyx+8KCgAyKzGza0WF67AfAnS9Q00aurFEq4IP8eqb2Bk5F4RAmQ==}
+    peerDependencies:
+      react: '>=16.14.0'
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
+    dev: false
+
+  /react-photo-gallery/8.0.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-Y9458yygEB9cIZAWlBWuenlR+ghin1RopmmU3Vice8BeJl0Se7hzfxGDq8W1armB/ic/kphGg+G1jq5fOEd0sw==}
+    peerDependencies:
+      react: ^16.8.0
+      react-dom: ^16.8.0
+    dependencies:
+      prop-types: 15.7.2
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      resize-observer-polyfill: 1.5.1
     dev: false
 
   /react/18.2.0:
@@ -851,6 +883,10 @@ packages:
     engines: {node: '>=8.10.0'}
     dependencies:
       picomatch: 2.3.1
+    dev: false
+
+  /resize-observer-polyfill/1.5.1:
+    resolution: {integrity: sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==}
     dev: false
 
   /resolve/1.22.1:

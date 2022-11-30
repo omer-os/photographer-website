@@ -1,16 +1,20 @@
 import "../styles/globals.css";
 
-import { Tajawal } from "@next/font/google";
+// import { Tajawal } from "@next/font/google";
+import { Layout } from "../components";
 
-const roboto = Tajawal({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
+// const roboto = Tajawal({
+//   subsets: ["latin"],
+//   weight: ["400", "700"],
+// });
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div className={roboto.className}>
-      <Component {...pageProps} />
+    <div>
+      
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </div>
   );
 }

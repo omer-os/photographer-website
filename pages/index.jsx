@@ -9,11 +9,16 @@ import {
 } from "../components";
 import client from "../data";
 import { gql } from "@apollo/client";
-
+import { motion } from "framer-motion";
 export default function Index({ data }) {
   return (
-    <Layout>
-      <div className="">
+    <>
+      <motion.div
+        animate={{
+          opacity: [0, 1],
+        }}
+        
+      >
         {/* <Hero heroImage={data.homePageData[0].heroImage.url} /> */}
         <Hero
           HeroImage={"https://mosa-khudur.github.io/olla/img/sadiq123.jpg"}
@@ -27,15 +32,8 @@ export default function Index({ data }) {
         />
 
         <HomeAbout />
-
-        
-
-
-
-
-        
-      </div>
-    </Layout>
+      </motion.div>
+    </>
   );
 }
 

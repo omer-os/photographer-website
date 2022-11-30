@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function Hero({ HeroImage }) {
@@ -8,12 +9,12 @@ export default function Hero({ HeroImage }) {
           <div className="text-3xl sm:text-black text-white max-w-[9em] font-bold">
             I'M SADIQ GHAZI Photographer & Vidiographer
           </div>
-          <a
-            href="gallery.html"
+          <Link
+            href="/portfolio"
             className="py-3 w-max px-4 bg-gradient-to-br from-green-900 text-white to-green-700 "
           >
             View Gallery
-          </a>
+          </Link>
           <div className="line absolute -left-10 top-2 w-2 h-[6em] bg-gradient-to-r from-green-900 to-green-600"></div>
 
           <div className="absolute top-0 -left-10 h-full w-2 bg-gradient-to-b from-green-900 to-green-600"></div>
