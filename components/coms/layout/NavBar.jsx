@@ -18,7 +18,7 @@ export default function NavBar() {
   return (
     <motion.nav
       dir="ltr"
-      className="flex z-40 justify-between items-center px-7 py-4 fixed right-0 top-0 transition-all sm:bg-white/0 left-0 w-full"
+      className="flex z-50 justify-between items-center px-7 py-4 fixed right-0 top-0 transition-all sm:bg-white/0 left-0 w-full"
     >
       <motion.div
         animate={{
