@@ -24,7 +24,7 @@ export default function Index({ data }) {
       </Head>
       <div className="text-center text-2xl font-bold">My Gallery</div>
 
-      <div className="bg-stone-800 py-2 mx-auto max-w-full overflow-x-scroll w-max sm:static sticky rounded-xl top-16 z-20 px-2 scroll-snap-none">
+      <div className="bg-stone-800 py-2 mx-auto max-w-full overflow-x-scroll w-max sm:static sticky rounded-xl top-16 z-40 px-2 scroll-snap-none">
         <div className="bg-stone-700 flex gap-2 p-2 rounded-xl w-max">
           {["wedding", "portrait", "baby", "promotion", "all"].map(
             (i, index) => (

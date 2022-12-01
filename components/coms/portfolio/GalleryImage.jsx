@@ -42,7 +42,7 @@ export default function GalleryImage({ i }) {
               `https://www.sadiqghazi.com/portfolio/image?url=${i.url}`
             );
           }}
-          className="absolute w-[3em] bottom-5 right-5 h-[3em] active:scale-95 transition-all z-40 flex items-center justify-center bg-white/20 rounded-xl"
+          className="absolute w-[3em] bottom-5 right-5 h-[3em] active:scale-95 transition-all z-20 flex items-center justify-center bg-white/20 rounded-xl"
         >
           <svg
             className="fill-zinc-200 w-6 h-6"
