@@ -5,10 +5,12 @@ import client from "../../data";
 import { gql } from "@apollo/client";
 import GalleryImage from "../../components/coms/portfolio/GalleryImage";
 import { useRouter } from "next/router";
+import Head from "next/head";
 export default function Index({ data }) {
   const [Category, setCategory] = useState("wedding");
   const router = useRouter();
   const { category } = router.query;
+
   useEffect(() => {
     if (category) {
       setCategory(category);
@@ -17,6 +19,9 @@ export default function Index({ data }) {
 
   return (
     <div className="mb-20 mt-24">
+      <Head>
+        <title>Gallery</title>
+      </Head>
       <div className="text-center text-2xl font-bold">My Gallery</div>
 
       <div className="bg-stone-800 py-2 mx-auto max-w-full overflow-x-scroll w-max sm:static sticky rounded-xl top-16 z-20 px-2 scroll-snap-none">

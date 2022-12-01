@@ -9,7 +9,7 @@ export default function Contact() {
           <div className="items-center text-center xs:flex xs:text-left xs:space-x-10 !text-white">
             <img
               className="w-24 mx-auto mb-4 -mt-12 transform -translate-y-2 object-cover xs:mb-0 xs:mt-0 xs:mx-none h-24 rounded md:w-32"
-              src="https://mosa-khudur.github.io/olla/img/sadiq123.jpg"
+              src="/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FQVXxbLl3SzuKzX0vgzD3&w=640&q=75"
               alt="John Doe"
               height="122"
               width="116"

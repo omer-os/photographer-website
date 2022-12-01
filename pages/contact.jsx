@@ -1,9 +1,13 @@
+import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 
 export default function Contect() {
   return (
     <div className="min-h-screen flex items-center md:mt-0 mt-10  justify-center">
+      <Head>
+        <title>Contact Me</title>
+      </Head>
       <div className="flex md:flex-row bg-stone-900 md:h-[20em] flex-col w-full mx-10 max-w-[50em] sm:gap-10 shadow-xl rounded-xl overflow-hidden">
         <div className="h-full w-full md:w-[20em]">
           <img

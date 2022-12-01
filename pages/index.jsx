@@ -11,9 +11,13 @@ import {
 import client from "../data";
 import { gql } from "@apollo/client";
 import { motion } from "framer-motion";
+import Head from "next/head";
 export default function Index({ data }) {
   return (
     <>
+    <Head>
+      <title>home</title>
+    </Head>
       <motion.div
         animate={{
           opacity: [0, 1],

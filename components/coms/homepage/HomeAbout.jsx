@@ -10,9 +10,9 @@ export default function HomeAbout() {
         <div className="flex items-center">
           <div className="w-full transition-all md:w-[20em] h-[25em]">
             <img
-              src="https://mosa-khudur.github.io/olla/img/sadiq123.jpg"
+              src="/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FQVXxbLl3SzuKzX0vgzD3&w=640&q=75"
               alt=""
-              className="w-full h-full object-cover"
+              className="w-full rounded h-full object-cover"
             />
           </div>
         </div>

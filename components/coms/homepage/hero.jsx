@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -21,7 +22,9 @@ export default function Hero({ HeroImage }) {
         </div>
       </div>
       <div className="object-cover absolute z-10 h-screen left-0 right-0 top-0">
-        <img
+        <Image
+        fill
+        priority={true}
           className="w-full h-full object-cover"
           src={HeroImage}
           alt="create and share"
