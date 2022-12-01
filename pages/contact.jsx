@@ -1,10 +1,15 @@
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
-
+import { motion } from "framer-motion";
 export default function Contect() {
   return (
-    <div className="min-h-screen flex items-center md:mt-0 mt-10  justify-center">
+    <motion.div
+      animate={{
+        opacity: [0, 1],
+      }}
+      className="min-h-screen flex items-center md:mt-0 mt-10  justify-center"
+    >
       <Head>
         <title>Contact Me</title>
       </Head>
@@ -94,6 +99,6 @@ export default function Contect() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

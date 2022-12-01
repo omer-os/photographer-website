@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 export default function GalleryImage({ i }) {
   const [ZoomedIn, setZoomedIn] = useState(false);
-
+  const [FlashBox, setFlashBox] = useState(false);
   return (
     <motion.div
       whileInView={{
@@ -41,6 +41,10 @@ export default function GalleryImage({ i }) {
             navigator.clipboard.writeText(
               `https://www.sadiqghazi.com/portfolio/image?url=${i.url}`
             );
+            setFlashBox(true);
+            setTimeout(() => {
+              setFlashBox(false);
+            }, 2000);
           }}
           className="absolute w-[3em] bottom-5 right-5 h-[3em] active:scale-95 transition-all z-20 flex items-center justify-center bg-white/20 rounded-xl"
         >
@@ -74,6 +78,28 @@ export default function GalleryImage({ i }) {
       </div>
 
       <AnimatePresence>
+        {FlashBox && (
+          <motion.div
+            exit={{
+              opacity: [1, 0],
+              scale: [1, 0.7],
+            }}
+            animate={{
+              opacity: [0, 1],
+              scale: [0.7, 1],
+            }}
+            className="rounded-xl bg-stone-900 px-8 py-7 fixed bottom-3 right-3 overflow-hidden z-50 flex text-xl font-bold"
+          >
+            Image Link Copied
+            <motion.div
+              animate={{
+                width: ["0%", "100%"],
+                transition: { duration: 2 },
+              }}
+              className="absolute h-1 bg-green-400 bottom-0 left-0"
+            ></motion.div>
+          </motion.div>
+        )}
         {ZoomedIn && (
           <div
             onClick={() => {

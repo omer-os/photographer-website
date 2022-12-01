@@ -18,7 +18,12 @@ export default function Index({ data }) {
   }, []);
 
   return (
-    <div className="mb-20 mt-24">
+    <motion.div
+      animate={{
+        opacity: [0, 1],
+      }}
+      className="mb-20 mt-24"
+    >
       <Head>
         <title>Gallery</title>
       </Head>
@@ -56,7 +61,9 @@ export default function Index({ data }) {
             ))}
         </AnimatePresence>
       </div>
-    </div>
+
+      
+    </motion.div>
   );
 }
 

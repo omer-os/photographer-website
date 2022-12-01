@@ -15,9 +15,9 @@ import Head from "next/head";
 export default function Index({ data }) {
   return (
     <>
-    <Head>
-      <title>home</title>
-    </Head>
+      <Head>
+        <title>home</title>
+      </Head>
       <motion.div
         animate={{
           opacity: [0, 1],
