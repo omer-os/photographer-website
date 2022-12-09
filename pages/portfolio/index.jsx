@@ -1,11 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import GalleryImage from "../../components/coms/portfolio/GalleryImage";
 import Head from "next/head";
-import { SanityClient } from "../../data";
+import SanityClient from "../../data";
+import { useRouter } from "next/router";
 export default function Index({ data }) {
-  const [Category, setCategory] = useState("wedding");
+  const [Category, setCategory] = useState("");
+
+  const router = useRouter();
+  const { category } = router.query;
+  console.log(category);
+  useEffect(() => {
+    if (category) {
+      setCategory(category);
+    } else {
+      setCategory("wedding");
+    }
+  }, []);
 
   return (
     <motion.div
@@ -56,7 +68,7 @@ export default function Index({ data }) {
 export async function getStaticProps() {
   const data = await SanityClient.fetch(`*[_type in ["category", "gallery"]][0]{
     "category":*[_type == 'category']{_id,title},
-    "gallery":*[_type == 'gallery']{title,slug,Image,categories->
+    "gallery":*[_type == 'gallery']{title,slug,Image,videoLink,categories->
   {title}}
   }
   `);

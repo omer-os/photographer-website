@@ -2,7 +2,9 @@ import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
-export default function Contect() {
+import SanityClient, { urlFor } from "../data";
+
+export default function Contect({ data }) {
   return (
     <motion.div
       animate={{
@@ -16,7 +18,7 @@ export default function Contect() {
       <div className="flex md:flex-row bg-stone-900 md:h-[20em] flex-col w-full mx-10 max-w-[50em] sm:gap-10 shadow-xl rounded-xl overflow-hidden">
         <div className="h-full w-full md:w-[20em]">
           <img
-            src="https://omarchatin.vercel.app/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1507679799987-c73779587ccf%3Fixlib%3Drb-1.2.1%26ixid%3DMnwxMjA3fDB8MHxzZWFyY2h8MzB8fGJ1c2luZXNzfGVufDB8fDB8fA%253D%253D%26auto%3Dformat%26fit%3Dcrop%26w%3D500%26q%3D60&w=1920&q=75"
+            src={urlFor(data[0].contactImage).url()}
             className="w-full h-full object-cover"
             alt=""
           />
@@ -101,4 +103,19 @@ export default function Contect() {
       </div>
     </motion.div>
   );
+}
+
+export async function getStaticProps() {
+  const data = await SanityClient.fetch(`
+  *[_type == "website"]{
+    contactImage
+  }
+  `);
+
+  return {
+    props: {
+      data,
+    },
+    revalidate: 10,
+  };
 }

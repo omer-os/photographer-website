@@ -1,19 +1,22 @@
 import Link from "next/link";
 import React from "react";
+import { urlFor } from "../../../data";
 
-export default function Contact() {
+export default function Contact({ data }) {
   return (
     <div className="container mt-20 mx-auto sm:px-20">
       <div>
         <div className="relative max-w-xl p-8 mx-auto mb-8 bg-stone-900 rounded-md shadow-2xl">
           <div className="items-center text-center xs:flex xs:text-left xs:space-x-10 !text-white">
-            <img
-              className="w-24 mx-auto mb-4 -mt-12 transform -translate-y-2 object-cover xs:mb-0 xs:mt-0 xs:mx-none h-24 rounded md:w-32"
-              src="/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FQVXxbLl3SzuKzX0vgzD3&w=640&q=75"
-              alt="John Doe"
-              height="122"
-              width="116"
-            />
+            {data && (
+              <img
+                className="w-24 mx-auto mb-4 -mt-12 transform -translate-y-2 object-cover xs:mb-0 xs:mt-0 xs:mx-none h-24 rounded md:w-32"
+                src={urlFor(data.contactImage).url()}
+                alt="John Doe"
+                height="122"
+                width="116"
+              />
+            )}
             <div className="flex-1 leading-chillaxed">
               <div className="mb-4 text-sm">
                 <strong className="block text-xl">sadiq ghazi</strong>

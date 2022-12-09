@@ -1,9 +1,8 @@
 import React from "react";
 import { Hero, HomeAbout, HomeGrid } from "../components";
-import client from "../data";
-import { gql } from "@apollo/client";
 import { motion } from "framer-motion";
 import Head from "next/head";
+import SanityClient from "../data";
 export default function Index({ data }) {
   return (
     <>
@@ -15,50 +14,28 @@ export default function Index({ data }) {
           opacity: [0, 1],
         }}
       >
-        <Hero HeroImage={data.homePageData[0].heroImage.url} />
+        <Hero data={data.website} />
 
-        <HomeGrid
-          wedding={data.homePageData[0].wedding.url}
-          portrait={data.homePageData[0].portrait.url}
-          baby={data.homePageData[0].baby.url}
-          promotion={data.homePageData[0].promotion.url}
-        />
+        <HomeGrid data={data.categories} />
 
-        <HomeAbout />
+        <HomeAbout data={data} />
       </motion.div>
     </>
   );
 }
 
 export async function getStaticProps() {
-  const { data } = await client.query({
-    query: gql`
-      {
-        homePageData {
-          heroImage {
-            url
-          }
-          wedding {
-            url
-          }
-          portrait {
-            url
-          }
-          promotion {
-            url
-          }
-          baby {
-            url
-          }
-        }
-      }
-    `,
-  });
+  const data =
+    await SanityClient.fetch(`*[_type in ["categories", "website"]][0]{
+    "categories":*[_type == 'categories']{title, coverImage},
+    "website":*[_type == 'website'][0]
+  }
+  `);
 
   return {
     props: {
-      data: data,
+      data,
     },
-    revalidate: 60,
+    revalidate: 10,
   };
 }

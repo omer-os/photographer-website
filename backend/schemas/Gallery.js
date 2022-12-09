@@ -28,5 +28,12 @@ export default {
       title: "Image",
       type: "image",
     },
+    {
+      title: "Video link",
+      name: "videoLink",
+      type: "string",
+      description:
+        "add youtube video link here. NOTE: if you add a video link to this filed the image will dismissed by front end.",
+    },
   ],
 };
