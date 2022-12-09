@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Footer,
-  Hero,
-  HomeAbout,
-  HomeGrid,
-  HomeShowCase,
-  Layout,
-  NavBar,
-} from "../components";
+import { Hero, HomeAbout, HomeGrid } from "../components";
 import client from "../data";
 import { gql } from "@apollo/client";
 import { motion } from "framer-motion";
@@ -31,8 +23,6 @@ export default function Index({ data }) {
           baby={data.homePageData[0].baby.url}
           promotion={data.homePageData[0].promotion.url}
         />
-
-        {/* <HomeShowCase /> */}
 
         <HomeAbout />
       </motion.div>

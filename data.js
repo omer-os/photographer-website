@@ -1,8 +1,14 @@
-import { ApolloClient, InMemoryCache } from "@apollo/client";
+import ImageUrlBuilder from "@sanity/image-url";
+import { createClient } from "next-sanity";
 
-const client = new ApolloClient({
-  uri: "https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clb3bccex0fr601t7cqw8gmvi/master",
-  cache: new InMemoryCache(),
+export const SanityClient = createClient({
+  projectId: "theyuzzp",
+  dataset: "production",
+  apiVersion: "2022-08-31",
+  useCdn: false,
 });
+const builder = ImageUrlBuilder(SanityClient);
 
-export default client;
+export function urlFor(source) {
+  return builder.image(source);
+}

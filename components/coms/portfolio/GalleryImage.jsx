@@ -1,8 +1,8 @@
 import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { urlFor } from "../../../data";
 
 export default function GalleryImage({ i }) {
   const [ZoomedIn, setZoomedIn] = useState(false);
@@ -27,19 +27,23 @@ export default function GalleryImage({ i }) {
           }}
           className="relative w-full h-full"
         >
-          <Image
-            src={i.url}
-            fill
-            alt="project image"
-            className="object-cover rounded-xl w-full h-full"
-            priority={true}
-          />
+          {i && (
+            <Image
+              src={urlFor(i.Image).url()}
+              fill
+              alt="project image"
+              className="object-cover rounded-xl w-full h-full"
+              priority={true}
+            />
+          )}
         </motion.div>
 
         <div
           onClick={() => {
             navigator.clipboard.writeText(
-              `https://www.sadiqghazi.com/portfolio/image?url=${i.url}`
+              `https://www.sadiqghazi.com/portfolio/image?url=${urlFor(
+                i.Image
+              ).url()}`
             );
             setFlashBox(true);
             setTimeout(() => {
@@ -128,7 +132,7 @@ export default function GalleryImage({ i }) {
               className="w-[50%] min-w-[20em] sm:h-[90vh] h-[80vh] bg-white relative rounded-xl"
             >
               <Image
-                src={i.url}
+                src={urlFor(i.Image).url()}
                 fill
                 alt="project image"
                 className="object-cover w-full h-full rounded-xl"

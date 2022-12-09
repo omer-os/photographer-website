@@ -1,21 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
-import client from "../../data";
-import { gql } from "@apollo/client";
 import GalleryImage from "../../components/coms/portfolio/GalleryImage";
-import { useRouter } from "next/router";
 import Head from "next/head";
+import { SanityClient } from "../../data";
 export default function Index({ data }) {
   const [Category, setCategory] = useState("wedding");
-  const router = useRouter();
-  const { category } = router.query;
-
-  useEffect(() => {
-    if (category) {
-      setCategory(category);
-    }
-  }, []);
 
   return (
     <motion.div
@@ -31,61 +21,50 @@ export default function Index({ data }) {
 
       <div className="bg-stone-800 py-2 mx-auto max-w-full overflow-x-scroll w-max sm:static sticky rounded-xl top-16 z-40 px-2 scroll-snap-none">
         <div className="bg-stone-700 flex gap-2 p-2 rounded-xl w-max">
-          {["wedding", "portrait", "baby", "promotion", "all"].map(
-            (i, index) => (
-              <div
-                key={i}
-                className="relative py-2 px-3 cursor-pointer"
-                onClick={() => setCategory(i)}
-              >
-                <span className="relative z-20">{i}</span>
+          {data.category.map((i, index) => (
+            <div
+              key={index}
+              className="relative py-2 px-3 cursor-pointer"
+              onClick={() => setCategory(i.title)}
+            >
+              <span className="relative z-20">{i.title}</span>
 
-                {Category === i && (
-                  <motion.div
-                    layoutId="box"
-                    className="absolute w-full h-full left-0 rounded-xl bg-stone-900 top-0 z-10"
-                  />
-                )}
-              </div>
-            )
-          )}
+              {Category === i.title && (
+                <motion.div
+                  layoutId="box"
+                  className="absolute w-full h-full left-0 rounded-xl bg-stone-900 top-0 z-10"
+                />
+              )}
+            </div>
+          ))}
         </div>
       </div>
 
       <div className="max-w-[70em] mt-6 px-3 transition-all sm:px-10 mx-auto w-full grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 auto-rows-[20em] gap-4">
         <AnimatePresence>
-          {data.gallerieImages
-            .filter((i) => i.category === Category)[0]
-            .images.map((i, index) => (
-              <GalleryImage key={i.id} i={i} />
+          {data.gallery
+            .filter((i) => i.categories.title === Category)
+            .map((i) => (
+              <GalleryImage key={i.title} i={i} />
             ))}
         </AnimatePresence>
       </div>
-
-      
     </motion.div>
   );
 }
 
 export async function getStaticProps() {
-  const { data } = await client.query({
-    query: gql`
-      {
-        gallerieImages {
-          category
-          images {
-            url
-            id
-          }
-        }
-      }
-    `,
-  });
+  const data = await SanityClient.fetch(`*[_type in ["category", "gallery"]][0]{
+    "category":*[_type == 'category']{_id,title},
+    "gallery":*[_type == 'gallery']{title,slug,Image,categories->
+  {title}}
+  }
+  `);
 
   return {
     props: {
-      data: data,
+      data,
     },
-    revalidate: 60,
+    revalidate: 10,
   };
 }
