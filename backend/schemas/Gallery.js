@@ -7,6 +7,7 @@ export default {
       name: "title",
       title: "Title",
       type: "string",
+      validation: (Rule) => [Rule.required()],
     },
     {
       name: "slug",
@@ -16,13 +17,14 @@ export default {
         source: "title",
         maxLength: 96,
       },
+      validation: (Rule) => [Rule.required(), Rule.uniqe()],
     },
     {
       name: "categories",
       type: "reference",
       to: [{ type: "categories" }],
+      validation: (Rule) => [Rule.required(), Rule.uniqe()],
     },
-
     {
       name: "Image",
       title: "Image",

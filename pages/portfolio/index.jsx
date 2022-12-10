@@ -19,6 +19,7 @@ export default function Index({ data }) {
     }
   }, []);
 
+
   return (
     <motion.div
       animate={{
@@ -54,11 +55,10 @@ export default function Index({ data }) {
 
       <div className="max-w-[70em] mt-6 px-3 transition-all sm:px-10 mx-auto w-full grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 auto-rows-[20em] gap-4">
         <AnimatePresence>
-          {data.gallery
-            .filter((i) => i.categories.title === Category)
-            .map((i) => (
-              <GalleryImage key={i.title} i={i} />
-            ))}
+          {data &&
+            data.gallery
+              .filter((i) => i.categories.title === Category)
+              .map((i) => <GalleryImage key={i.title} i={i} />)}
         </AnimatePresence>
       </div>
     </motion.div>

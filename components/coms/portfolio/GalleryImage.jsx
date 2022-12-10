@@ -21,7 +21,7 @@ export default function GalleryImage({ i }) {
       className={`relative cursor-pointer`}
       layout
     >
-      {!i.videoLink && (
+      {!i.videoLink && i.Image && (
         <>
           <div className="relative w-full h-full">
             <motion.div

@@ -7,11 +7,13 @@ export default {
       name: "title",
       title: "Title",
       type: "string",
+      validation: (Rule) => [Rule.required(), Rule.uniqe()],
     },
     {
       name: "coverImage",
       title: "cover image",
       type: "image",
+      validation: (Rule) => [Rule.required(), Rule.uniqe()],
     },
   ],
 };
