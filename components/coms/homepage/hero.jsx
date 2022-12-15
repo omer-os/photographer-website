@@ -4,7 +4,6 @@ import React from "react";
 import { urlFor } from "../../../data";
 
 export default function Hero({ data }) {
-  console.log(data);
   return (
     <section className="flex items-center h-[90vh] mt-[5em] gap-10">
       <div className="flex">
