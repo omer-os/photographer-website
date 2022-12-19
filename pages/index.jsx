@@ -19,7 +19,6 @@ export default function Index({ data }) {
         <HomeGrid data={data.categories} />
 
         <HomeAbout data={data} />
-        
       </motion.div>
     </>
   );
